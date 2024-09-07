@@ -12,8 +12,8 @@ export default function Header() {
         <img src={reactImg} alt="Stylized atom" />
         <h1>React Essentials</h1>
         <p>
-        {dynamicDiscription} Understanding these foundational React concepts will set you 
-        up for success in building diverse and robust applications.
+        {dynamicDiscription} Mastering these foundational React concepts will not only set you up for success in building diverse and robust applications but also 
+        empower you to tackle more complex challenges with confidence and efficiency.
         </p>
       </header>
     </div>
