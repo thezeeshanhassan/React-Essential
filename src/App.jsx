@@ -6,7 +6,7 @@ import { EXAMPLES } from "./data";
 import { useState } from "react";
 
 function App() {
-  const [selectedTopic, setSelectedTopic] = useState("components");
+  const [selectedTopic, setSelectedTopic] = useState();
 
   function handleClick(selectedBtn) {
     setSelectedTopic(selectedBtn);
@@ -36,24 +36,23 @@ function App() {
             <TabButton onClick={() => handleClick("components")}>
               Components
             </TabButton>
-            <TabButton onClick={() => handleClick("jsx")}>
-              JSX
-              </TabButton>
-            <TabButton onClick={() => handleClick("props")}>
-              Props
-              </TabButton>
-            <TabButton onClick={() => handleClick("state")}>
-              State
-              </TabButton>
+            <TabButton onClick={() => handleClick("jsx")}>JSX</TabButton>
+            <TabButton onClick={() => handleClick("props")}>Props</TabButton>
+            <TabButton onClick={() => handleClick("state")}>State</TabButton>
           </menu>
 
-          <div id="tab-content">
-            <h3>{EXAMPLES[selectedTopic].title}</h3>
-            <p>{EXAMPLES[selectedTopic].description}</p>
-            <pre>
-              <code>{EXAMPLES[selectedTopic].code}</code>
-            </pre>
-          </div>
+          {!selectedTopic && (
+            <p>Please select a topic you want to unserstand.</p>
+          )}
+          {selectedTopic && (
+            <div id="tab-content">
+              <h3>{EXAMPLES[selectedTopic].title}</h3>
+              <p>{EXAMPLES[selectedTopic].description}</p>
+              <pre>
+                <code>{EXAMPLES[selectedTopic].code}</code>
+              </pre>
+            </div>
+          )}
         </section>
 
         <h2>Time to get started!</h2>
